@@ -15,12 +15,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
 
-
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -28,25 +27,57 @@
 <body>
 
 
+<!-- Page Content -->
+<div class="container">
 
-    <!-- Page Content -->
-    <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <form data-toggle="validator" role="form" id="form" action="mail.php">
+                <div class="form-group">
+                    <label for="inputEmail" class="control-label">Email</label>
+                    <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email"
+                           data-error="Введен неверный адрес почты." required>
+                    <div class="help-block with-errors" id="email-helper"></div>
+                </div>
+                <div class="form-group">
+                    <div class="g-recaptcha" data-sitekey="6LdqUyIUAAAAALWvXrsxjgwyUFVw2hYQ39KpvrYa"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="mySubmit" class="btn btn-primary">Сохранить</button>
+                </div>
 
-        <div class="row">
-            <div class="col-lg-12 text-center">
-
-            </div>
+            </form>
         </div>
-        <!-- /.row -->
-
     </div>
-    <!-- /.container -->
+    <!-- /.row -->
 
-    <!-- jQuery Version 1.11.1 -->
-    <script src="js/jquery.js"></script>
+</div>
+<!-- /.container -->
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+<div class="modal fade" tabindex="-1" role="dialog" id="modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Заголовок</h4>
+            </div>
+            <div class="modal-body">
+                <p>Спасибо!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- jQuery Version 1.11.1 -->
+<script src="js/jquery.js"></script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/validator.js"></script>
+<script src="js/scripts.js"></script>
 
 </body>
 
