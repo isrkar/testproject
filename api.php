@@ -8,7 +8,13 @@ $req = $db->real_escape_string(@$_GET['req']);
 $searchReq = $db->real_escape_string(@$_GET['search']);
 
 if ($req == 'getCount') {
-    $query = 'SELECT COUNT(*) as total FROM `email`';
+    $search = '';
+
+    if ($searchReq) {
+        $search = "WHERE `email` LIKE '%" . $searchReq . "%'";
+    }
+
+    $query = 'SELECT COUNT(*) as total  FROM `email` ' . $search . ';';
     $result = $db->query($query)->fetch_assoc();
 
     echo json_encode(['status' => 'success', 'req' => $req, 'count' => $result['total']]);
