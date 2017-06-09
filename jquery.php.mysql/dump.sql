@@ -4,7 +4,7 @@ create table email
 		primary key,
 	email varchar(42) null,
 	constraint email_email_uindex
-		unique (email)
+	unique (email)
 )
 ;
 
